@@ -89,7 +89,7 @@ def myfilt(img, ker):
         new_img[i,:] = np.correlate(img[i,:], ker, "same")
     return new_img
 def blur_estimate(img):
-    img = np.double(hbf(img))
+    img = np.double(hbf(img))#转化为灰度图后再进行锐化处理
     y, x = img.shape
     Hv = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1])/9
     #Hh = Hv.T
